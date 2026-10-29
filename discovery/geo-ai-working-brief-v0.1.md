@@ -12,8 +12,8 @@
 - **Most of the evidence is thin or AI-amplified.** There were six friendly conversations, none documented as recorded and none about price, against roughly 30–35 AI-generated assessments (exec summary §3).
 - **This isn't white space.** Geoscience BC and Purple Rock bulk-indexed 43-101s with CSA permission (1), and AiMinr claims a 20,000+ report knowledge graph with benchmarking and due diligence (7H). Any edge has to come from something deeper, and nothing has shown that yet.
 - **Nobody has tested the big technical and legal questions:** data rights, SEDAR+ access, extraction accuracy, and whether a well-prompted frontier model already does most of this.
-- **My proposal:** a short, cheap experiment phase (about 3 weeks) funded by a small budget from Craig and Dave ($500–$1,000 in model and compute credits), with Gabriel and me supplying the technical work.
-- **I'd want a cofounder role** (roughly CPO, hands-on). Roles, equity and Craig's position need settling before I put in serious hours.
+- **My proposal:** Craig and Dave each put in $500, in accounts they own, to fund the tokens. Gabriel and I put in the time and build a thin-slice prototype of one consolidated platform, aimed at demo narratives they write. Full writeup under Proposed path forward.
+- **I'd still want a cofounder role** (roughly CPO, hands-on). The prototype is a smaller commitment than that: our time, their token budget, they own the result. Roles and equity stay unsettled.
 - **I'll put the hard questions to them as "here's how I'm thinking about it"**, not as verdicts, and have Gabriel review first.
 
 ---
@@ -67,8 +67,8 @@
 
 ## My current thinking *(my thinking)*
 
-**1. A small budget, as skin in the game.**
-I'll ask Craig and Dave for roughly **$500–$1,000 in model and compute credits** to prototype and answer the riskiest technical questions. The money is less important than the signal. It shows they're committed to testing the idea, not just discussing it, while Gabriel and I contribute the expertise. I'll tie the budget to a defined 3-week experiment with a written decision at the end (see "Proposed path").
+**1. A small budget, so the build isn't on us.**
+I'll ask Craig and Dave for **$500 each** in model and compute credits, in accounts they own. Gabriel and I operate those accounts and do the build. The money covers tokens. Our time is the contribution. I don't want us donating the work and paying for it too. The shape of that build is under Proposed path forward. It does not settle the role and equity questions below.
 
 **2. Roles. I'd want to be a cofounder.**
 - **Me:** roughly Chief Product Officer, but doing a lot of hands-on product development, not just strategy.
@@ -89,7 +89,7 @@ I'll present the legal, structural and strategic questions as "here's how I'm th
 | **Liability for scoring reports and QPs** | Start with tools that help people do their own review (gap-finding, comparison) rather than public scores or rankings of QPs. "Name and shame" and QP rankings (6/Apr 3, 0F, 6I1) look like defamation and negligent-misstatement risk. Needs counsel. |
 | **Securities law and adviser registration** | Publishing project or issuer assessments to investors could raise adviser-registration questions (for example NI 31-103 in Canada, or US equivalents). This is my concern, not something the packet covers or I've verified. Ask counsel before building any investor-facing product. |
 | **MNPI** | Any product that takes draft or pre-submission reports holds market-moving information. If we go there, plan security, access controls and insider-trading policy from day one (0E, 6E2). |
-| **Structure and equity** | Settle this before I put serious hours in. The $1M indicative value (11) has no stated basis. The "contribution ledger" for unpaid work is vague. Nonprofit, PBC or incubator ideas (0G, 10E) don't fit naturally with founder equity. My lean: a for-profit with a stated public-benefit mission, with vesting for everyone. Very tentative. |
+| **Structure and equity** | Still unsettled. The prototype proposal does not settle it, and I would not treat the prototype hours as equity until this is written down. The $1M indicative value (11) has no stated basis. The "contribution ledger" for unpaid work is vague. Nonprofit, PBC or incubator ideas (0G, 10E) don't fit naturally with founder equity. My lean: a for-profit with a stated public-benefit mission, with vesting for everyone. Very tentative. |
 | **Craig's Dingo employment** | Counsel needs to read the actual IP-assignment and outside-activity terms before anything is formalized. If Craig is constrained, his role and equity should reflect that. I need to check my own employer constraints too. |
 | **Who is the buyer?** | My current guess is project-evaluation and corporate-development teams at royalty/streaming companies and mid-tier miners, with consultancy QA leads as the alternative. Test both head-to-head. Desharnais (OR Royalties, 6J1) is the ideal first conversation because he compiled 200+ reports by hand. |
 | **Willingness to pay** | We have zero evidence today. Each artifact interview should ask for a concrete commitment: a paid pilot, data sharing or an LOI. If the answer is just "interesting", treat it as a no (6E3's own test). |
@@ -100,35 +100,63 @@ I'll present the legal, structural and strategic questions as "here's how I'm th
 
 ## Proposed path forward
 
-**About 3 weeks, roughly matching exec summary §5.**
-- **Week 1: ground rules and cheap tests.**
-  - Working session with Craig and Dave. Agree roles, NDAs, IP assignment and the budget.
-  - Start the SEDAR+ access spike and the frontier-model baseline on the 12 sample reports, with Dave blind-scoring outputs against 10–15 questions.
-  - Book a short legal consult on data rights and liability.
-  - Trial competitor products, starting with AiMinr, MinersAI and MiningHub.
-  - Book 4–6 interviews.
-- **Week 2: build artifacts.**
-  - Reconstruct histories for 2 BC deposits (3–5 if tractable). Red Chris, Blackwater and Galore Creek are mentioned in 13B; Craig and Dave should choose.
-  - Measure section and table extraction against the page-count matrix and a gold set Dave defines.
-- **Week 3: test with users and decide.**
-  - Run artifact interviews with willingness-to-pay asks.
-  - Do a first-pass cost model.
-  - Write a decision memo: define an MVP, run a narrower experiment, or stop.
+*(my thinking)*
 
-**What $500–$1,000 buys *(ESTIMATE; check current model pricing before quoting)***
+The proposal is to fund a thin-slice prototype of the platform their pivots have been circling, see whether the hard parts actually work, and decide from that whether to go further. Buyer, price and company structure stay open. This path does not wait on more market validation.
 
-The basis is the sample set I measured: 12 reports, about 1.1M words, roughly **1.5M tokens in total, about 125k tokens per report**. For list pricing I've assumed a range of about **$2–$15 per million input tokens** and **$10–$75 per million output tokens** across mid-tier and top-tier models. These are assumptions, not quotes.
+### The offer
 
-| Activity | Rough token volume (est.) | Rough cost (est.) |
-|---|---|---|
-| One full read of all 12 reports, plus structured summaries | ~1.5M in / ~0.6M out | ~$10–$70 |
-| Frontier-model baseline: ~15 questions per report, full context each time, no caching | ~22M in / ~1M out | ~$55–$400 |
-| Same baseline with prompt caching or retrieval | a fraction of the above | ~$20–$150 |
-| Extraction evaluation: 30–50 fields × 12 reports × 2–3 models, 2–3 iterations | ~10–15M in | ~$30–$250 |
-| Project histories: 3–5 deposits × ~5–10 reports each, ~3–5 passes | ~10–30M in | ~$30–$450 |
-| PDF/table parsing tooling, mostly open-source | — | ~$0–$100 |
+Craig and Dave each put in **$500**. That money opens model and compute accounts **they own**. Gabriel and I operate those accounts and build in their space. The code, the data we produce, and the accounts are theirs. Full ownership sits with them.
 
-**Bottom line (estimate):** $500 likely covers a disciplined 3-week experiment if we use caching or retrieval and mid-tier models for bulk passes. $1,000 gives headroom for top-tier models on the expert-facing comparisons. The bigger costs are our time and Dave's expert-review hours, not compute.
+Gabriel and I put in the time and the build. They put in domain knowledge when we get stuck, and enough capital that we are donating the work without also paying for the tokens. A thousand dollars of tokens is enough to build something decent if we stay narrow: a prototype with a real UI and a real data layer, on real sample reports. It will be demoware. Coverage will be a small slice of what the platform could eventually do. It will be good enough to click through and show someone.
+
+If the work runs out of road early, we stop spending. Worst case it costs a few hundred dollars and they still have whatever got built, in a GitHub repo they can open and shop around. That is the floor I would commit to.
+
+### The platform
+
+One platform, stitched together from the March-to-October pivots. The through-line is an evidence-linked record of a mineral project, anchored on NI 43-101s, with a person in the loop (13A, and the exec summary §1). The products they named are views on that record.
+
+Here is what we will try to build a thin slice of:
+
+- **Report ingestion and structured extraction.** Take a 43-101 and pull it into comparable fields: study type, effective date versus report date, resources and reserves, cut-off, recovery, capex and opex, NPV and IRR, QPs and firms, and the other parameters a reviewer actually compares. Geology and the engineering and economic sections both belong here. Jeremy Vincent and Don both said geology alone is not a product (JV notes, 6I1). This is the data layer under everything else (3, 5, C4, C5 in the exec summary).
+- **Evidence-linked project record.** One place for a project. Each fact points at a source, a page and a date, and is marked as fact, interpretation or inference. This is the "database as the long-term asset" from March (0B) and the Oct 4 thesis (13A §3). Provenance is the record. A formal ontology is not. Lightweight structure unless the build shows we need more (13A §8).
+- **Technical review and gap-finding.** What is missing, inconsistent or unsupported, against Form F1 and against what peer reports of the same stage tend to include. This is the QA and benchmarking wedge that kept coming back (0E, 0F, 6E2, 6G1, 11), and the use NB at AMC actually responded to. The securities-reviewer job (0E, 8C) is the same screen with a different question. We read reports. We do not draft them. Drafting was set aside in March as an IT and data-cleaning business (0B).
+- **Peer benchmarking.** Two or three projects side by side on normalized fields, by deposit type and stage. "How does this compare?" is one of the questions 13A wants the record to answer, and section-by-section comparison came out of the Jeremy Vincent debrief (0E).
+- **Progression over time.** For one deposit, how the technical picture changed across successive reports: what was known, what moved, what is still unresolved. This is the longitudinal record (13A) and the comparison-over-time interest from Jeff Kyba and Don (6H1, 6I1). The 12-report sample set is mostly one snapshot per project, so this view depends on pulling earlier filings for deposits Craig and Dave choose. Red Chris, Blackwater and Galore Creek are the ones named in 13B.
+- **Maturity, without a score.** What is known, how confidently, and what work is still open, as a reading of the record. This is the usable part of the Orebody Knowledge and heat-map thread (10A–10D, 0F). It stays a reading. It does not become a FICO score, a QP ranking, or a probability the deposit becomes a mine. 13A §5 warns against that last one, and the liability notes above apply to the first two.
+- **Diligence and screening brief.** A short, evidence-linked brief for someone evaluating a deal: stage, economics, confidence, open questions, how it sits against the comparables on screen. This is the "decision intelligence" and "Bloomberg for mineral assets" thread (3, 5), cut down to something a streamer, a corporate-development person, or Don's kind of evaluator could walk through (JV notes, 6I1). High-level diligence, which is the value Jeremy said he could see.
+- **Historical reassessment.** Take an earlier report on a project and show what later disclosure confirmed, revised, or left hanging. Jeff Kyba's interest in reinterpreting legacy data (6H1), and the June "hindsight" idea (0G), on one or two projects rather than a corpus.
+- **Expert corrections that stick.** A person can fix an extraction or an interpretation, the correction stays on the record, and later views use it. Expert-in-the-loop review is the moat claimed in nearly every pivot. The thin slice only has to show that loop once, on real data, with Dave as the person in it.
+
+Corporate memory (6F1) and pre-submission review of drafts (0B, 0E, 6E2) stay off this build. Both need a customer's private data, and drafts are MNPI. People-as-a-dataset (0G, 6I1) stays off for the same liability reasons as QP ranking. Those can be later views on the same record if the prototype earns a reason to go there.
+
+The thin slice runs on real sample data: the 12-report set already in hand (3,767 pages, extractable text), plus successive reports for a couple of deposits if a prioritized demo needs history. The UI has to be something you would want to put on a screen. A good part of the work is that razzle-dazzle, and every striking view has to be backed by extracted facts a person can click through to a page.
+
+Along the way we test the subsystems this platform depends on, and we show the limits in the demo. Can we obtain the documents, including whatever SEDAR+ will actually allow. Can we segment a report and extract the tables well enough. Can we keep one deposit identity across renamed properties, ownership changes and the date traps in 13B. How far a well-prompted frontier model gets on the demo questions before any custom machinery is justified (13A's guardrail). What still needs Dave. The prototype is the demo and the feasibility test at the same time.
+
+### What we need from Craig and Dave
+
+Two things, roughed out, plus one working session. Then we build.
+
+**Draft for reaction:** `discovery/platform-capabilities-and-demos-v0.1.md` merges the Oct 16 call with the lists below—prioritized capabilities and seven demo scripts. They should reorder, cut, and rewrite narratives; that doc is the starting point, not the final spec.
+
+1. **Prioritize the features.** Order the list above by what would make a killer demo, and by where they think the value shows up first. We will build thin slices in that order.
+2. **Killer demo narratives.** A handful of walkthroughs, rough is enough. Who is in the room, what they ask, which features the story needs, and what they would see that would make them lean forward. Rank the narratives against the feature list. Those narratives are the build target. We show each demo as the slice lands.
+3. **A working session on boundaries.** Enumerate the data sources in scope for the slice (which reports, which deposits, which adjacent disclosures, if any). Confirm the guardrails: what the prototype should do, and what it should not do. The should-not list above is my starting position.
+
+An example of the shape, so the ask is concrete. This is an illustration, not a chosen demo:
+
+> A project evaluator has the Hammerdown PEA and the Queensway PEA open. They ask what is thin in each relative to the other, and which numbers they would not trust without the backup. The screen shows the extracted fields side by side, the gaps, and a short brief. Every figure links to a page. They leave with questions for the company, not a score of the QP.
+
+Craig and Dave should replace that with the stories they actually want to tell. If a narrative needs a data source we do not have, that source goes on the enumeration list, and we find out quickly whether we can get it.
+
+### Where it leaves us
+
+Gabriel and I take the ranked narratives and run them through our development process. When we hit a domain question, we bring it to Dave, and to Craig where it is commercial or structural. We are not asking them to run the build.
+
+As slices land, we show them. At some point we look at what is on screen and what we learned about the data, and we decide whether this is worth proceeding with. The decision rests on feasibility and on whether the demos are actually compelling.
+
+For $500 each, plus our time, the proposal is: a prototype with the full code on GitHub that they can play with, and a straight read on the open questions around the data and the subsystems. I hope that read is conclusive. Some questions may come back as "this path is blocked" or "a frontier model already does this part," and that is a result. Either way they own the accounts and the code, and they have something they can show. From there we decide where it goes.
 
 ---
 
@@ -136,22 +164,22 @@ The basis is the sample set I measured: 12 reports, about 1.1M words, roughly **
 
 **For Craig and Dave**
 1. If you had to bet on one paying buyer today, who is it?
-2. Will you fund the $500–$1,000 experiment budget, and who approves the spend?
+2. Will you each put in $500, in accounts you own, to fund the token spend for the prototype?
 3. Craig: what do your Dingo terms allow for IP, outside work and non-compete? What role do you see for yourself if Gabriel and I join as cofounders?
 4. Dave: how much time can you commit, and would you want an operating role (COO or CEO), or stay as domain lead?
 5. Is the 50/50 agreement signed? What's the basis for the $1M figure, and how would the contribution ledger convert to equity?
 6. Has anyone looked into SEDAR+ or CSA reuse rights, or asked Purple Rock or Geoscience BC how they got permission?
 7. Are there raw notes or recordings for the interviews, especially Britt (6F1) and Don (6I1)?
 8. Did the September manual pilot or the ontology work start (0G)?
-9. Which 3–5 BC deposits should we use, and can Dave commit review hours in the next 3 weeks?
+9. Which deposits should we use if a demo needs a real history, and can Dave commit review hours as the slices land?
 10. Would any interviewee be a design partner, or pay for a manual review now?
 
 **For me**
 1. How many hours a week can I realistically give, and for how long?
 2. Do I have any employer conflict or IP-assignment constraint?
 3. What cofounder terms would I accept (equity, vesting, credit for unpaid work)?
-4. When should Gabriel come in: now, or after the baseline results?
-5. Am I willing to contribute toward the budget myself if they don't fund it, or is their funding a deliberate test of commitment?
+4. The proposal assumes Gabriel is in from the start. Does he actually want that?
+5. If they will not fund the token accounts, does the prototype wait?
 
 ---
 
@@ -165,7 +193,7 @@ The basis is the sample set I measured: 12 reports, about 1.1M words, roughly **
 - [ ] Confirm current model pricing and update the budget table.
 - [ ] Draft the legal question list for counsel (data rights, liability, adviser registration, MNPI, Dingo terms).
 - [ ] Decide what goes in the eventual note to Craig and Dave, and the tone.
-- [ ] Pick a decision date for after the 3-week experiment.
+- [ ] After the prototype is demoable, decide whether it is worth proceeding.
 
 ---
 
