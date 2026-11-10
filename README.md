@@ -1,6 +1,6 @@
 # geo-ai
 
-Discovery materials and research for the GeoAI / mining intelligence platform (Kinary Ventures).
+Discovery materials and research for the GeoAI / mining intelligence platform ([GeoAI-OreHistoryLab](https://github.com/GeoAI-OreHistoryLab)).
 
 ## Contents
 
@@ -14,8 +14,8 @@ Install [Git LFS](https://git-lfs.com/) if you do not already have it, then run 
 
 ```bash
 git lfs install
-git clone https://github.com/KinaryVentures/geo-ai.git
-cd geo-ai
+git clone https://github.com/GeoAI-OreHistoryLab/discovery.git
+cd discovery
 ```
 
 If you cloned before installing LFS, run `git lfs install` and then `git lfs pull` to fetch LFS objects.
